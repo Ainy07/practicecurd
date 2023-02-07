@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+</head>
+<body>
+
+    <div class="main">
+        <div class="content">
+            <h1>Curd - application  <br><span>In django</span> <br></h1><br>
+            <p class="par">CRUD stands for Create, Read, Update & Delete. These are the four <br>basic operations which are executed on Database Models. We are<br> developing a web app which is capable of performing these operations.<br> The ability of the application to read data from the database</p>
+
+               
+                <div class="form">
+                    <h2>Update</h2>
+                    <form method="post" action="/update_data/">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{user.id}}" name="uid">
+                    <input type="text" name="name" placeholder="Enter Name Here" required>
+                    <input type="email" name="email" placeholder="Enter Email Here" required>
+                    <input type="text" name="company" placeholder="Enter Company Here" required>
+                    <input type="number"  name="areacode" maxlength="6" placeholder="Enter Area code Here" required >
+                    <input type="number" name="contact" maxlength="10 " placeholder="Enter Mobile Number Here" required > 
+                    <select class="option" name="subject" id="select" required>
+                 <option value="">-- choose subject--</option>
+                 <option value="python">python</option>
+                 <option value="django">django</option>
+                 <option value="mysql">mysql</option>
+                 
+                 </select>
+                  
+
+                  
+                   <input type="submit" class="btnn" style="background-color: rgb(213, 162, 107);">
+                   </form>
+                    <p class="link">Don't have an account<br>
+                    <a href="#">Sign up </a> here</a></p>
+                    <p class="liw">Log in with</p>
+
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>
+
+                </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>
